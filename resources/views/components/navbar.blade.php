@@ -24,7 +24,7 @@
                          x-transition:leave="transition ease-in duration-100"
                          x-transition:leave-start="opacity-100 translate-y-0"
                          x-transition:leave-end="opacity-0 translate-y-1"
-                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] max-w-[95vw] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
                         <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
                             <div class="pr-7"><p class="mega-title">Payouts</p>
                                 <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
@@ -72,7 +72,7 @@
                          x-transition:leave="transition ease-in duration-100"
                          x-transition:leave-start="opacity-100 translate-y-0"
                          x-transition:leave-end="opacity-0 translate-y-1"
-                         class="fixed left-1/2 top-16 z-50 mt-0 w-[680px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[680px] max-w-[95vw] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
                         <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
                             <div class="pr-7"><p class="mega-title">Financial Services</p>
                                 <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
@@ -120,7 +120,7 @@
                          x-transition:leave="transition ease-in duration-100"
                          x-transition:leave-start="opacity-100 translate-y-0"
                          x-transition:leave-end="opacity-0 translate-y-1"
-                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] max-w-[95vw] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
                         <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
                             <div class="pr-7"><p class="mega-title">Who we are</p>
                                 <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
@@ -162,7 +162,7 @@
                          x-transition:leave="transition ease-in duration-100"
                          x-transition:leave-start="opacity-100 translate-y-0"
                          x-transition:leave-end="opacity-0 translate-y-1"
-                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] max-w-[95vw] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
                         <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
                             <div class="pr-7"><p class="mega-title">Content</p>
                                 <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
@@ -252,18 +252,19 @@
 
     {{-- Mobile Menu Panel --}}
     <div id="mobile-menu"
-         class="fixed inset-y-0 right-0 z-50 w-full max-w-sm translate-x-full transform bg-white transition-transform duration-300 ease-out dark:bg-gray-900">
-        <div class="flex h-16 items-center justify-between border-b border-gray-200 px-6 dark:border-gray-800">
-            <span class="font-display font-bold text-gray-900 dark:text-white">Menu</span>
+         class="fixed inset-0 z-50 transform transition-transform duration-300 ease-out"
+         style="background-color: #ffffff; transform: translateX(100%)">
+        <div class="flex h-16 items-center justify-between border-b border-gray-200 px-6" style="background-color: #ffffff;">
+            <span class="font-display font-bold text-gray-900">Menu</span>
             <button id="mobile-menu-close" type="button"
-                    class="rounded-lg p-2 text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+                    class="rounded-lg p-2 text-gray-600 hover:bg-gray-100"
                     aria-label="Close menu">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
             </button>
         </div>
-        <nav class="overflow-y-auto p-6">
+        <nav class="overflow-y-auto p-6" style="background-color: #ffffff; min-height: calc(100% - 64px);">
             <div class="space-y-1">
                 {{-- Mobile: Solutions --}}
                 <div x-data="{ open: false }">
