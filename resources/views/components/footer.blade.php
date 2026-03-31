@@ -10,7 +10,7 @@
                     <img src="{{ asset('logo.png') }}" alt="Digitwace" class="h-14 w-auto">
                 </a>
                 <p class="mt-4 max-w-sm text-sm text-gray-600 dark:text-gray-400">
-                    The modern investment platform for everyone. Trade stocks, ETFs, crypto, and options with zero commissions.
+                    Pan-African payment infrastructure. Send and collect payments across 50+ markets with one API.
                 </p>
                 {{-- Social Links --}}
                 <div class="mt-6 flex items-center gap-4">
@@ -34,12 +34,12 @@
 
             {{-- Link Columns --}}
             <div>
-                <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Products</h3>
+                <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Solutions</h3>
                 <ul class="mt-4 space-y-3">
-                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Stocks</a></li>
-                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">ETFs</a></li>
-                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Crypto</a></li>
-                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Options</a></li>
+                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Pay-to-Mobile Wallets</a></li>
+                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Pay-to-Banks</a></li>
+                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Collections</a></li>
+                    <li><a href="#" class="text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Stablecoin Payouts</a></li>
                 </ul>
             </div>
 

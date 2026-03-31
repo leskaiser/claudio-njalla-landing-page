@@ -1,6 +1,6 @@
 <header id="header" class="sticky top-0 z-50 transition-all duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav class="flex h-16 items-center justify-between">
+        <nav class="relative flex h-16 items-center justify-between">
 
             {{-- Logo --}}
             <a href="{{ url('/') }}" class="flex items-center gap-2">
@@ -9,11 +9,187 @@
 
             {{-- Desktop Navigation --}}
             <div class="hidden items-center gap-1 lg:flex">
-                <a href="#" class="nav-link">Invest</a>
-                <a href="#" class="nav-link">Markets</a>
+
+                {{-- SOLUTIONS mega menu --}}
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="nav-link flex items-center gap-1" :class="open ? 'text-gray-900 dark:text-white' : ''">
+                        Solutions
+                        <svg class="h-3.5 w-3.5 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-150"
+                         x-transition:enter-start="opacity-0 translate-y-1"
+                         x-transition:enter-end="opacity-100 translate-y-0"
+                         x-transition:leave="transition ease-in duration-100"
+                         x-transition:leave-start="opacity-100 translate-y-0"
+                         x-transition:leave-end="opacity-0 translate-y-1"
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                        <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
+                            <div class="pr-7"><p class="mega-title">Payouts</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Pay-to-Mobile-Wallets
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Pay-to-Banks
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Pay-to-Cards
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Pay-to-Stablecoin-Wallets
+                                </a>
+                            </div>
+                            <div class="pl-7"><p class="mega-title">Collections</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Accept Mobile Wallets
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Accept Bank Payments
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Accept Digital Vouchers
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Accept BNPL
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- INDUSTRIES mega menu --}}
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="nav-link flex items-center gap-1" :class="open ? 'text-gray-900 dark:text-white' : ''">
+                        Industries
+                        <svg class="h-3.5 w-3.5 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-150"
+                         x-transition:enter-start="opacity-0 translate-y-1"
+                         x-transition:enter-end="opacity-100 translate-y-0"
+                         x-transition:leave="transition ease-in duration-100"
+                         x-transition:leave-start="opacity-100 translate-y-0"
+                         x-transition:leave-end="opacity-0 translate-y-1"
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[680px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                        <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
+                            <div class="pr-7"><p class="mega-title">Financial Services</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Banks & Neobanks
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Money Transfer Operators
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Mobile Wallets
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Digital Asset Companies
+                                </a>
+                            </div>
+                            <div class="pl-7"><p class="mega-title">Platforms & Commerce</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Gig Economy Platforms
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Payment Service Providers
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    E-commerce
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Payroll & EOR
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- COMPANY mega menu --}}
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="nav-link flex items-center gap-1" :class="open ? 'text-gray-900 dark:text-white' : ''">
+                        Company
+                        <svg class="h-3.5 w-3.5 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-150"
+                         x-transition:enter-start="opacity-0 translate-y-1"
+                         x-transition:enter-end="opacity-100 translate-y-0"
+                         x-transition:leave="transition ease-in duration-100"
+                         x-transition:leave-start="opacity-100 translate-y-0"
+                         x-transition:leave-end="opacity-0 translate-y-1"
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                        <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
+                            <div class="pr-7"><p class="mega-title">Who we are</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    About Us
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Careers
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    ESG Programme
+                                </a>
+                            </div>
+                            <div class="pl-7"><p class="mega-title">Connect</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Partner Programme
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Press Centre
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Events
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- RESOURCES mega menu --}}
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="nav-link flex items-center gap-1" :class="open ? 'text-gray-900 dark:text-white' : ''">
+                        Resources
+                        <svg class="h-3.5 w-3.5 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-150"
+                         x-transition:enter-start="opacity-0 translate-y-1"
+                         x-transition:enter-end="opacity-100 translate-y-0"
+                         x-transition:leave="transition ease-in duration-100"
+                         x-transition:leave-start="opacity-100 translate-y-0"
+                         x-transition:leave-end="opacity-0 translate-y-1"
+                         class="fixed left-1/2 top-16 z-50 mt-0 w-[640px] -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-7 shadow-2xl ring-1 ring-black/5 dark:border-gray-800 dark:bg-gray-900 dark:ring-white/5">
+                        <div class="grid grid-cols-2 gap-6 divide-x divide-gray-100 dark:divide-gray-800">
+                            <div class="pr-7"><p class="mega-title">Content</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Newsroom
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Insights
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Knowledge Base
+                                </a>
+                            </div>
+                            <div class="pl-7"><p class="mega-title">Developers</p>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    Case Studies
+                                </a>
+                                <a href="#" class="block w-full rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
+                                    API Documentation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Simple links --}}
                 <a href="#" class="nav-link">Pricing</a>
-                <a href="#" class="nav-link">Learn</a>
-                <a href="#" class="nav-link">About</a>
+
             </div>
 
             {{-- Right Section --}}
@@ -87,13 +263,72 @@
                 </svg>
             </button>
         </div>
-        <nav class="p-6">
+        <nav class="overflow-y-auto p-6">
             <div class="space-y-1">
-                <a href="#" class="nav-link-mobile">Invest</a>
-                <a href="#" class="nav-link-mobile">Markets</a>
+                {{-- Mobile: Solutions --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="nav-link-mobile flex w-full items-center justify-between">
+                        Solutions
+                        <svg class="h-4 w-4 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" class="ml-4 mt-1 space-y-1 border-l-2 border-gray-100 pl-3 dark:border-gray-800">
+                        <a href="#" class="nav-link-mobile text-sm">Pay-to-Mobile-Wallets</a>
+                        <a href="#" class="nav-link-mobile text-sm">Pay-to-Banks</a>
+                        <a href="#" class="nav-link-mobile text-sm">Pay-to-Cards</a>
+                        <a href="#" class="nav-link-mobile text-sm">Pay-to-Stablecoin-Wallets</a>
+                        <a href="#" class="nav-link-mobile text-sm">Accept Mobile Wallets</a>
+                        <a href="#" class="nav-link-mobile text-sm">Accept Bank Payments</a>
+                        <a href="#" class="nav-link-mobile text-sm">Accept Digital Vouchers</a>
+                        <a href="#" class="nav-link-mobile text-sm">Accept BNPL</a>
+                    </div>
+                </div>
+                {{-- Mobile: Industries --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="nav-link-mobile flex w-full items-center justify-between">
+                        Industries
+                        <svg class="h-4 w-4 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" class="ml-4 mt-1 space-y-1 border-l-2 border-gray-100 pl-3 dark:border-gray-800">
+                        <a href="#" class="nav-link-mobile text-sm">Banks & Neobanks</a>
+                        <a href="#" class="nav-link-mobile text-sm">Money Transfer Operators</a>
+                        <a href="#" class="nav-link-mobile text-sm">Mobile Wallets</a>
+                        <a href="#" class="nav-link-mobile text-sm">Gig Economy Platforms</a>
+                        <a href="#" class="nav-link-mobile text-sm">Digital Asset Companies</a>
+                        <a href="#" class="nav-link-mobile text-sm">Payment Service Providers</a>
+                        <a href="#" class="nav-link-mobile text-sm">E-commerce</a>
+                        <a href="#" class="nav-link-mobile text-sm">Payroll & EOR</a>
+                    </div>
+                </div>
+                {{-- Mobile: Company --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="nav-link-mobile flex w-full items-center justify-between">
+                        Company
+                        <svg class="h-4 w-4 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" class="ml-4 mt-1 space-y-1 border-l-2 border-gray-100 pl-3 dark:border-gray-800">
+                        <a href="#" class="nav-link-mobile text-sm">About Us</a>
+                        <a href="#" class="nav-link-mobile text-sm">Careers</a>
+                        <a href="#" class="nav-link-mobile text-sm">ESG Programme</a>
+                        <a href="#" class="nav-link-mobile text-sm">Partner Programme</a>
+                        <a href="#" class="nav-link-mobile text-sm">Press Centre</a>
+                        <a href="#" class="nav-link-mobile text-sm">Events</a>
+                    </div>
+                </div>
+                {{-- Mobile: Resources --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="nav-link-mobile flex w-full items-center justify-between">
+                        Resources
+                        <svg class="h-4 w-4 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" class="ml-4 mt-1 space-y-1 border-l-2 border-gray-100 pl-3 dark:border-gray-800">
+                        <a href="#" class="nav-link-mobile text-sm">Newsroom</a>
+                        <a href="#" class="nav-link-mobile text-sm">Insights</a>
+                        <a href="#" class="nav-link-mobile text-sm">Knowledge Base</a>
+                        <a href="#" class="nav-link-mobile text-sm">Case Studies</a>
+                        <a href="#" class="nav-link-mobile text-sm">API Documentation</a>
+                    </div>
+                </div>
                 <a href="#" class="nav-link-mobile">Pricing</a>
-                <a href="#" class="nav-link-mobile">Learn</a>
-                <a href="#" class="nav-link-mobile">About</a>
             </div>
             {{-- Language Switcher Mobile --}}
             <div class="mt-6 border-t border-gray-200 pt-6 dark:border-gray-700">
@@ -110,3 +345,4 @@
         </nav>
     </div>
 </header>
+

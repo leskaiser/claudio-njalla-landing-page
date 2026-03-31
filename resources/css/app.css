@@ -21,27 +21,30 @@
     --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
     --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
-    --color-primary-50:  #eff6ff;
-    --color-primary-100: #dbeafe;
-    --color-primary-200: #bfdbfe;
-    --color-primary-300: #93c5fd;
-    --color-primary-400: #60a5fa;
-    --color-primary-500: #3b82f6;
-    --color-primary-600: #2563eb;
-    --color-primary-700: #1d4ed8;
-    --color-primary-800: #1e40af;
-    --color-primary-900: #1e3a8a;
+    /* Digitwace Blue #3F5FA8 */
+    --color-primary-50:  #eef1f8;
+    --color-primary-100: #d5ddf0;
+    --color-primary-200: #adbae1;
+    --color-primary-300: #8498d2;
+    --color-primary-400: #6278c0;
+    --color-primary-500: #3F5FA8;
+    --color-primary-600: #334d8a;
+    --color-primary-700: #273c6d;
+    --color-primary-800: #1c2b50;
+    --color-primary-900: #111a33;
+    --color-primary-950: #090e1a;
 
-    --color-accent-50:  #f5f3ff;
-    --color-accent-100: #ede9fe;
-    --color-accent-200: #ddd6fe;
-    --color-accent-300: #c4b5fd;
-    --color-accent-400: #a78bfa;
-    --color-accent-500: #8b5cf6;
-    --color-accent-600: #7c3aed;
-    --color-accent-700: #6d28d9;
-    --color-accent-800: #5b21b6;
-    --color-accent-900: #4c1d95;
+    /* Digitwace Orange #F57C00 */
+    --color-accent-50:  #fff8f0;
+    --color-accent-100: #feecd3;
+    --color-accent-200: #fdd5a0;
+    --color-accent-300: #fbb96a;
+    --color-accent-400: #f89c38;
+    --color-accent-500: #F57C00;
+    --color-accent-600: #c46300;
+    --color-accent-700: #944b00;
+    --color-accent-800: #633200;
+    --color-accent-900: #331900;
 
     --color-success-300: #86efac;
     --color-success-400: #4ade80;
@@ -172,6 +175,59 @@
     .dark .nav-link-mobile { color: #d1d5db; }
     .dark .nav-link-mobile:hover { background: #1f2937; color: #fff; }
 
+    /* Mega menu */
+    .mega-title {
+        margin-bottom: 0.75rem;
+        padding: 0 0.25rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #9ca3af;
+    }
+    .dark .mega-title { color: #6b7280; }
+
+    .mega-link {
+        display: block;
+        border-radius: 0.6rem;
+        padding: 0.65rem 1rem;
+        margin-bottom: 0.35rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #1f2937;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+        transition: background 0.15s, box-shadow 0.15s, color 0.15s, border-color 0.15s;
+        white-space: nowrap;
+    }
+    .mega-link:last-child { margin-bottom: 0; }
+    .mega-link:hover {
+        background: #fff;
+        border-color: #d1d5db;
+        box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.08);
+        color: #111827;
+    }
+    .dark .mega-link {
+        color: #e5e7eb;
+        background: #1f2937;
+        border-color: #374151;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.2);
+    }
+    .dark .mega-link:hover {
+        background: #374151;
+        border-color: #4b5563;
+        box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.3);
+        color: #fff;
+    }
+
+    .mega-link-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #1f2937;
+    }
+    .dark .mega-link-label { color: #e5e7eb; }
+
     /* Cards */
     .card {
         border-radius: 1rem;
@@ -204,11 +260,11 @@
         font-size: 0.75rem;
         font-weight: 500;
     }
-    .badge-primary { background: #dbeafe; color: #1d4ed8; }
-    .dark .badge-primary { background: color-mix(in srgb, var(--color-primary-900) 30%, transparent); color: #93c5fd; }
+    .badge-primary { background: #d5ddf0; color: #273c6d; }
+    .dark .badge-primary { background: color-mix(in srgb, var(--color-primary-900) 30%, transparent); color: #8498d2; }
 
-    .badge-accent { background: #ede9fe; color: #6d28d9; }
-    .dark .badge-accent { background: color-mix(in srgb, var(--color-accent-900) 30%, transparent); color: #c4b5fd; }
+    .badge-accent { background: #feecd3; color: #944b00; }
+    .dark .badge-accent { background: color-mix(in srgb, var(--color-accent-900) 30%, transparent); color: #fbb96a; }
 
     .badge-success { background: #dcfce7; color: #15803d; }
     .dark .badge-success { background: color-mix(in srgb, #14532d 30%, transparent); color: #86efac; }
@@ -248,7 +304,7 @@
    ============================================================ */
 @layer utilities {
     .gradient-text {
-        background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-500));
+        background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-accent-500) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
