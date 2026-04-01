@@ -158,7 +158,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
                         </svg>
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Bonamoussadi, Douala, Cameroon</span>
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Sable Bonamoussadi, Douala, Cameroon</span>
                     </li>
                 </ul>
             </div>
@@ -170,12 +170,29 @@
         {{-- Bottom --}}
         <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p class="text-xs text-gray-500">
-                &copy; {{ date('Y') }} Digitwace. All rights reserved.
+                &copy; {{ date('Y') }} Digitwace. {{ app()->getLocale() === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.' }}
             </p>
             <div class="flex flex-wrap justify-center gap-6">
                 <a href="#" class="text-xs text-gray-500 transition-colors hover:text-primary-600 dark:hover:text-primary-400">Terms of Service</a>
                 <a href="#" class="text-xs text-gray-500 transition-colors hover:text-primary-600 dark:hover:text-primary-400">Privacy Policy</a>
                 <a href="#" class="text-xs text-gray-500 transition-colors hover:text-primary-600 dark:hover:text-primary-400">Cookie Policy</a>
+            </div>
+        </div>
+
+        {{-- Certifications --}}
+        <div class="mt-8 flex flex-col items-center gap-3">
+            <p class="text-xs font-medium uppercase tracking-widest text-gray-400">
+                {{ app()->getLocale() === 'fr' ? 'Certifié & Conforme' : 'Certified & Compliant' }}
+            </p>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-gray-700 dark:bg-gray-800">
+                    <img src="{{ asset('pci.png') }}" alt="PCI DSS" class="h-6 w-auto object-contain">
+                    <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">PCI DSS</span>
+                </div>
+                <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 dark:border-gray-700 dark:bg-gray-800">
+                    <img src="{{ asset('antic.jpg') }}" alt="ANTIC" class="h-6 w-auto object-contain">
+                    <span class="text-xs font-semibold text-gray-600 dark:text-gray-300">ANTIC</span>
+                </div>
             </div>
         </div>
     </div>

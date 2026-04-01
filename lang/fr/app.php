@@ -1,39 +1,157 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Lignes de traduction de l'application
-|--------------------------------------------------------------------------
-| Ajoutez ici les clés de traduction spécifiques au projet.
-| Utilisation dans Blade : __('app.key') ou @lang('app.key')
-*/
-
 return [
 
-    // Navigation
     'nav' => [
-        'invest'      => 'Investir',
-        'markets'     => 'Marchés',
-        'pricing'     => 'Tarifs',
-        'learn'       => 'Apprendre',
-        'about'       => 'À propos',
-        'login'       => 'Connexion',
-        'get_started' => 'Commencer',
+        'solutions'  => 'Solutions',
+        'industries' => 'Industries',
+        'company'    => 'Entreprise',
+        'resources'  => 'Ressources',
+        'pricing'    => 'Tarifs',
     ],
 
-    // Hero
     'hero' => [
-        'badge'       => 'Trading sans commission',
-        'headline'    => 'Investissez mieux, tradez plus intelligemment',
-        'subheadline' => 'La plateforme d\'investissement moderne pour les actions, ETF, crypto et options. Commencez avec seulement 1 $ et construisez votre patrimoine sans commission.',
-        'cta_primary' => 'Commencer à investir',
-        'cta_demo'    => 'Voir la démo',
-        'reviews'     => '4,9/5 d\'après 50 000+ avis',
+        'badge'       => 'La nouvelle génération des solutions digitales en Afrique',
+        'headline'    => "L'infrastructure digitale",
+        'headline_2'  => "de l'Afrique de demain",
+        'subheadline' => 'Digitwace conçoit des solutions fintech innovantes permettant des paiements rapides, sécurisés et sans frontières à travers sa technologie WacePay.',
+        'cta_primary' => 'Découvrir nos solutions',
+        'cta_secondary' => 'Explorer notre technologie',
+        'stat_1'      => '110+ pays connectés',
+        'stat_2'      => 'Transactions en temps réel',
+        'stat_3'      => 'Cryptage avancé',
+        'stats_countries' => '110+',
+        'stats_countries_label' => 'Pays connectés',
+        'stats_founded' => '2015',
+        'stats_founded_label' => 'Fondée à Douala',
+        'stats_products' => '3',
+        'stats_products_label' => 'Produits phares',
+        'stats_uptime' => '99.9%',
+        'stats_uptime_label' => 'Uptime garanti',
     ],
 
-    // Footer
+    'wacepay' => [
+        'badge'    => 'WacePay — Fintech by Digitwace',
+        'headline' => "Une infrastructure de paiement",
+        'headline_2' => 'pensée pour l\'Afrique',
+        'sub'      => 'WacePay permet d\'envoyer et de recevoir de l\'argent à l\'international, d\'effectuer des paiements instantanés, et d\'intégrer facilement des solutions fintech via API. Rapide, sécurisée et accessible, elle s\'adapte aussi bien aux besoins de la diaspora qu\'à ceux des entreprises en pleine croissance.',
+        'card_1_title' => "Transfert d'argent",
+        'card_1_desc'  => "Transferts internationaux vers 110+ pays. Rapide, sécurisé, accessible via wallet, banque ou cash.",
+        'card_2_title' => 'Paiements intelligents',
+        'card_2_desc'  => 'B2B, B2P, P2B, P2P. Paiement de factures et transactions en temps réel pour tous les cas d\'usage.',
+        'card_3_title' => 'Moyens de paiement',
+        'card_3_badge' => 'Multi-canal',
+        'card_3_desc'  => 'Virement bancaire, Wallet, Cash, Mobile Money — tous les canaux en une seule intégration.',
+        'card_4_title' => 'Portée internationale',
+        'card_4_desc'  => "Afrique + international. Diaspora, PME, startups et e-commerce connectés à l'économie mondiale.",
+        'cta'          => 'Explorer WacePay',
+    ],
+
+    'process' => [
+        'badge'      => 'Processus',
+        'headline'   => 'Démarrez en',
+        'headline_2' => '4 étapes simples',
+        'sub'        => 'De l\'inscription à la première transaction, tout est conçu pour être rapide et sans friction.',
+        'step_1_title' => 'Inscription',
+        'step_1_desc'  => 'Créez votre compte en quelques minutes sur la plateforme WacePay.',
+        'step_2_title' => 'Vérification KYC',
+        'step_2_desc'  => 'Vérification d\'identité rapide et sécurisée pour activer votre compte.',
+        'step_3_title' => 'Intégration',
+        'step_3_desc'  => 'Connectez votre système via notre API REST ou utilisez notre dashboard.',
+        'step_4_title' => 'Utilisation',
+        'step_4_desc'  => 'Envoyez et recevez des paiements partout dans le monde instantanément.',
+    ],
+
+    'security' => [
+        'badge'      => 'Conformité & Sécurité',
+        'headline'   => 'Conçu pour les',
+        'headline_2' => 'marchés réglementés',
+        'sub'        => 'Digitwace opère sous des cadres réglementaires stricts, garantissant la conformité de votre activité tout en vous permettant de scaler rapidement.',
+        'stat_1'     => 'DSS Level 1',
+        'stat_2'     => '27001 Certifié',
+        'stat_3'     => 'KYC/KYB intégré',
+        'cta'        => 'En savoir plus',
+        'card_1_title' => 'Chiffrement 256-bit',
+        'card_1_desc'  => 'Toutes les données chiffrées en transit et au repos via AES-256.',
+        'card_2_title' => 'Licences réglementaires',
+        'card_2_desc'  => 'Agréé par les banques centrales et régulateurs financiers africains.',
+        'card_3_title' => 'Surveillance 24/7',
+        'card_3_desc'  => 'Monitoring en temps réel avec détection de fraude par IA.',
+        'card_4_title' => 'API Developer-First',
+        'card_4_desc'  => 'REST & Webhooks avec sandbox, SDKs et documentation complète.',
+    ],
+
+    'products' => [
+        'badge'      => 'Nos Produits',
+        'headline'   => 'Des solutions',
+        'headline_2' => 'complémentaires',
+        'sub'        => 'Au-delà de la fintech, Digitwace développe des solutions qui renforcent la croissance digitale des entreprises africaines.',
+        'wacepay_desc'    => 'Infrastructure de paiement moderne pour envoyer, recevoir et intégrer des paiements internationaux via API. Pensée pour la diaspora et les entreprises.',
+        'nufisms_desc'    => 'Outil de communication permettant aux entreprises de rester connectées à leurs clients via SMS et WhatsApp.',
+        'digitstore_desc' => 'Plateforme e-commerce clé en main avec systèmes de paiement intégrés pour créer et gérer votre boutique en ligne.',
+        'learn_more'      => 'En savoir plus',
+    ],
+
+    'services' => [
+        'badge'      => 'Services Digitaux',
+        'headline'   => 'Expertise digitale pour',
+        'headline_2' => 'votre transformation',
+        'sub'        => 'Grâce à une expertise solide en développement, cloud, design et stratégie digitale, Digitwace accompagne les entreprises dans leur transformation numérique. Chaque solution est pensée pour être performante, évolutive et adaptée aux réalités du marché africain.',
+        'dev_title'  => 'Développement Web & Mobile',
+        'dev_desc'   => 'Applications web et mobile sur mesure, performantes et évolutives pour votre business.',
+        'mkt_title'  => 'Marketing Digital',
+        'mkt_desc'   => 'SEO, publicité en ligne et stratégies de croissance pour accélérer votre visibilité.',
+        'train_title'=> 'Cloud & ERP',
+        'train_desc' => 'Migration cloud, intégration ERP et infrastructure digitale adaptée à votre échelle.',
+        'design_title'=> 'Design & Stratégie',
+        'design_desc' => 'Identité visuelle, UI/UX et stratégie digitale pour positionner votre marque.',
+    ],
+
+    'about' => [
+        'badge'      => 'Qui sommes-nous',
+        'headline'   => 'Une nouvelle génération',
+        'headline_2' => "d'entreprise tech africaine",
+        'desc'       => "Digitwace incarne une nouvelle génération d'entreprise technologique africaine tournée vers l'innovation financière et la transformation digitale. À travers ses solutions, elle simplifie la manière dont les particuliers, les entreprises et les startups interagissent avec l'argent, les services numériques et les opportunités globales.",
+        'desc_2'     => "Digitwace s'impose comme un acteur engagé dans la construction d'un écosystème financier sans frontières, où les transactions deviennent simples, fluides et accessibles à tous. L'objectif est clair : accélérer l'inclusion financière et offrir aux entreprises africaines les outils nécessaires pour évoluer dans une économie digitale globale.",
+        'stat_1_label' => 'Présence internationale',
+        'stat_2_label' => 'Digitwace LLC — USA',
+        'vision_title'  => 'Notre Vision',
+        'vision_desc'   => "Devenir un pilier de l'infrastructure digitale et financière en Afrique, en connectant les individus et les entreprises à des solutions modernes, fiables et sans frontières.",
+        'mission_title' => 'Notre Mission',
+        'mission_1'     => 'Accélérer l\'inclusion financière',
+        'mission_2'     => 'Paiements instantanés sans frontières',
+        'mission_3'     => 'Transformation digitale des entreprises africaines',
+    ],
+
+    'testimonials' => [
+        'badge'      => 'Témoignages',
+        'headline'   => 'Ils nous font',
+        'headline_2' => 'confiance',
+        'sub'        => 'Des startups aux grandes entreprises, Digitwace accompagne la croissance digitale en Afrique.',
+        't1_text'    => '"WacePay a transformé notre façon de payer nos livreurs. En quelques secondes, 500 paiements envoyés simultanément à travers 5 pays africains."',
+        't1_name'    => 'Amadou Koné',
+        't1_role'    => 'CTO, LogiAfrique',
+        't2_text'    => '"Digitwace a développé notre plateforme e-commerce avec DigitStore et intégré WacePay. Résultat : +40% de conversions dès le premier mois."',
+        't2_name'    => 'Fatima Ndiaye',
+        't2_role'    => 'CEO, ShopCamer',
+        't3_text'    => '"La formation Cloud dispensée par Digitwace a permis à notre équipe de migrer notre infrastructure en 3 semaines. Support exceptionnel."',
+        't3_name'    => 'Jean Owona',
+        't3_role'    => 'DSI, Groupe Horizon',
+    ],
+
+    'cta' => [
+        'badge'      => "Rejoignez l'écosystème Digitwace",
+        'headline'   => 'Prêt à digitaliser',
+        'headline_2' => 'votre activité ?',
+        'sub'        => "Accédez à nos solutions en quelques minutes. Sans frais d'installation. Démarrez en jours, pas en mois.",
+        'primary'    => 'Découvrir nos solutions',
+        'secondary'  => 'Nous contacter',
+        'feat_1'     => "Sans frais d'installation",
+        'feat_2'     => 'Sandbox disponible',
+        'feat_3'     => 'Support dédié',
+    ],
+
     'footer' => [
-        'tagline'   => 'La plateforme d\'investissement moderne pour tous. Tradez des actions, ETF, crypto et options sans commission.',
         'copyright' => '© :year Digitwace. Tous droits réservés.',
     ],
 

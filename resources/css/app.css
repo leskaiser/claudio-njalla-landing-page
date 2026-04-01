@@ -21,30 +21,30 @@
     --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
     --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
-    /* Digitwace Blue #3F5FA8 */
+    /* Digitwace Blue #3754a0 */
     --color-primary-50:  #eef1f8;
-    --color-primary-100: #d5ddf0;
-    --color-primary-200: #adbae1;
-    --color-primary-300: #8498d2;
-    --color-primary-400: #6278c0;
-    --color-primary-500: #3F5FA8;
-    --color-primary-600: #334d8a;
-    --color-primary-700: #273c6d;
-    --color-primary-800: #1c2b50;
-    --color-primary-900: #111a33;
+    --color-primary-100: #d5dcee;
+    --color-primary-200: #adb9dd;
+    --color-primary-300: #8496cc;
+    --color-primary-400: #5c73bb;
+    --color-primary-500: #3754a0;
+    --color-primary-600: #2d4490;
+    --color-primary-700: #233480;
+    --color-primary-800: #1a2660;
+    --color-primary-900: #111840;
     --color-primary-950: #090e1a;
 
-    /* Digitwace Orange #F57C00 */
-    --color-accent-50:  #fff8f0;
-    --color-accent-100: #feecd3;
-    --color-accent-200: #fdd5a0;
-    --color-accent-300: #fbb96a;
-    --color-accent-400: #f89c38;
-    --color-accent-500: #F57C00;
-    --color-accent-600: #c46300;
-    --color-accent-700: #944b00;
-    --color-accent-800: #633200;
-    --color-accent-900: #331900;
+    /* Digitwace Orange #fe8005 */
+    --color-accent-50:  #fff4e6;
+    --color-accent-100: #ffe4bf;
+    --color-accent-200: #ffd099;
+    --color-accent-300: #ffbc72;
+    --color-accent-400: #ffa84c;
+    --color-accent-500: #fe8005;
+    --color-accent-600: #e57004;
+    --color-accent-700: #cc6003;
+    --color-accent-800: #a34c02;
+    --color-accent-900: #7a3801;
 
     --color-success-300: #86efac;
     --color-success-400: #4ade80;
@@ -305,10 +305,10 @@
    ============================================================ */
 @layer utilities {
     .gradient-text {
-        background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-accent-500) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #3754a0;
+    }
+    .dark .gradient-text {
+        color: #8496cc;
     }
 
     .grid-pattern {
@@ -355,3 +355,150 @@
 .dark #header.scrolled {
     background: rgb(3 7 18 / 0.98);
 }
+
+/* ============================================================
+   LOGOS SLIDER
+   ============================================================ */
+@keyframes logos-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.logos-track {
+    width: max-content;
+    animation: logos-scroll 30s linear infinite;
+}
+
+.logos-track:hover {
+    animation-play-state: paused;
+}
+
+/* ============================================================
+   FLOW DIAGRAM
+   ============================================================ */
+.flow-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 1.25rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 8px 24px -4px rgb(0 0 0 / 0.2);
+    flex-shrink: 0;
+}
+
+.flow-node-sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 5rem;
+    border-radius: 0.875rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.5rem;
+    flex-shrink: 0;
+}
+
+.flow-arrow-h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+    min-width: 60px;
+}
+
+.flow-label {
+    font-size: 0.65rem;
+    color: #6b7280;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.flow-line-h {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flow-line-h-dashed {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, #9ca3af 0, #9ca3af 6px, transparent 6px, transparent 12px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flow-arrowhead-r {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid #9ca3af;
+    margin-right: -1px;
+}
+
+.flow-arrowhead-l {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 8px solid #9ca3af;
+    margin-left: -1px;
+}
+
+.flow-line-v {
+    width: 2px;
+    height: 100%;
+    background: #d1d5db;
+    position: relative;
+}
+
+.flow-line-v::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid #9ca3af;
+}
+
+.flow-line-v-dashed {
+    width: 2px;
+    height: 100%;
+    background: repeating-linear-gradient(180deg, #9ca3af 0, #9ca3af 6px, transparent 6px, transparent 12px);
+}
+
+.flow-label-side {
+    font-size: 0.6rem;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+.dark .flow-line-h { background: #374151; }
+.dark .flow-arrowhead-r { border-left-color: #6b7280; }
+.dark .flow-arrowhead-l { border-right-color: #6b7280; }
+.dark .flow-line-v { background: #374151; }
+.dark .flow-line-v::after { border-top-color: #6b7280; }
+.dark .flow-label { color: #9ca3af; }
