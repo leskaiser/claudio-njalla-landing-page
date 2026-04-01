@@ -326,22 +326,10 @@
                 @endforeach
             </div>
         </div>
-            {{-- Steps cards --}}
-            <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                @foreach([['01','step_1'],['02','step_2'],['03','step_3'],['04','step_4']] as [$num,$key])
-                <div class="card card-hover p-6">
-                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl {{ $loop->even ? 'bg-accent-100 text-accent-600 dark:bg-accent-900/30 dark:text-accent-400' : 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400' }}">
-                        <span class="font-display text-xl font-bold">{{ $num }}</span>
-                    </div>
-                    <h3 class="font-display text-lg font-bold text-gray-900 dark:text-white">{{ __('app.process.'.$key.'_title') }}</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{ __('app.process.'.$key.'_desc') }}</p>
-                </div>
-                @endforeach
-            </div>
         </div>
     </section>
 
-    {{-- SÉCURITÉ --}}    {{-- SÉCURITÉ --}}
+    {{-- SÉCURITÉ --}}
     <section class="relative overflow-hidden bg-primary-950 py-24">
         <div class="absolute inset-0 opacity-10"><div class="grid-pattern h-full w-full"></div></div>
         <div class="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-primary-500/20 blur-[120px]"></div>
