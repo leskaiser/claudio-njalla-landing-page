@@ -326,6 +326,19 @@
                 @endforeach
             </div>
         </div>
+            {{-- Steps cards --}}
+            <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                @foreach([['01','step_1'],['02','step_2'],['03','step_3'],['04','step_4']] as [$num,$key])
+                <div class="card card-hover p-6">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl {{ $loop->even ? 'bg-accent-100 text-accent-600 dark:bg-accent-900/30 dark:text-accent-400' : 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400' }}">
+                        <span class="font-display text-xl font-bold">{{ $num }}</span>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-gray-900 dark:text-white">{{ __('app.process.'.$key.'_title') }}</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{{ __('app.process.'.$key.'_desc') }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
     </section>
 
     {{-- SÉCURITÉ --}}    {{-- SÉCURITÉ --}}
@@ -388,8 +401,8 @@
                 {{-- WacePay --}}
                 <div class="group relative rounded-2xl border border-gray-200 bg-gray-50 p-8 transition-all hover:border-primary-300 hover:bg-white dark:border-gray-800 dark:bg-gray-800/50 dark:hover:bg-gray-800">
                     <div class="absolute -top-3 right-4"><span class="rounded-full bg-accent-500 px-3 py-1 text-xs font-bold text-white">Lead</span></div>
-                    <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-sm ring-1 ring-gray-200 dark:bg-gray-700 dark:ring-gray-600">
-                        <img src="{{ asset('nos-produits/wacepay.png') }}" alt="WacePay" class="h-12 w-12 object-contain">
+                    <div class="mb-5">
+                        <img src="{{ asset('nos-produits/wacepay.png') }}" alt="WacePay" class="h-14 w-auto object-contain dark:brightness-0 dark:invert">
                     </div>
                     <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white">WacePay</h3>
                     <p class="mt-3 text-gray-600 dark:text-gray-400">{{ __('app.products.wacepay_desc') }}</p>
@@ -399,8 +412,8 @@
                 </div>
                 {{-- Nufisms --}}
                 <div class="group relative rounded-2xl border border-gray-200 bg-gray-50 p-8 transition-all hover:border-primary-300 hover:bg-white dark:border-gray-800 dark:bg-gray-800/50 dark:hover:bg-gray-800">
-                    <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-sm ring-1 ring-gray-200 dark:bg-gray-700 dark:ring-gray-600">
-                        <img src="{{ asset('nos-produits/nufisms.png') }}" alt="Nufisms" class="h-12 w-12 object-contain">
+                    <div class="mb-5">
+                        <img src="{{ asset('nos-produits/nufisms.png') }}" alt="Nufisms" class="h-14 w-auto object-contain dark:brightness-0 dark:invert">
                     </div>
                     <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white">Nufisms</h3>
                     <p class="mt-3 text-gray-600 dark:text-gray-400">{{ __('app.products.nufisms_desc') }}</p>
@@ -410,8 +423,8 @@
                 </div>
                 {{-- DigitStore --}}
                 <div class="group relative rounded-2xl border border-gray-200 bg-gray-50 p-8 transition-all hover:border-primary-300 hover:bg-white dark:border-gray-800 dark:bg-gray-800/50 dark:hover:bg-gray-800">
-                    <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-sm ring-1 ring-gray-200 dark:bg-gray-700 dark:ring-gray-600">
-                        <img src="{{ asset('nos-produits/digitstore.png') }}" alt="DigitStore" class="h-12 w-12 object-contain">
+                    <div class="mb-5">
+                        <img src="{{ asset('nos-produits/digitstore.png') }}" alt="DigitStore" class="h-14 w-auto object-contain dark:brightness-0 dark:invert">
                     </div>
                     <h3 class="font-display text-xl font-bold text-gray-900 dark:text-white">DigitStore</h3>
                     <p class="mt-3 text-gray-600 dark:text-gray-400">{{ __('app.products.digitstore_desc') }}</p>
