@@ -1,57 +1,43 @@
 "use client";
 import { motion } from "framer-motion";
-import { Megaphone, TrendingUp, Clapperboard, CalendarDays, LucideIcon, Check } from "lucide-react";
+import { Gem, Sparkles } from "lucide-react";
 import { SERVICES } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/context";
-import { RevealSection } from "@/components/ui/RevealSection";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 
-const E = [0.22, 1, 0.36, 1] as const;
-const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: E } } };
-
-const ICONS: Record<string, LucideIcon> = {
-  "Promotion de Marque":         Megaphone,
-  "Influence Marketing":         TrendingUp,
-  "Apparitions (Films & Clips)": Clapperboard,
-  "Événementiel":                CalendarDays,
-};
+const ICONS = { nails: Gem, sparkles: Sparkles };
 
 export function ServicesSection() {
   const { t } = useI18n();
   return (
-    <RevealSection id="services" className="relative py-20 md:py-28" style={{ background: "var(--bg-primary)" }}>
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <SectionLabel>{t.services.label}</SectionLabel>
-        <motion.h2 variants={fadeUp} className="font-display mt-6 text-4xl font-bold text-[var(--text-primary)] md:text-6xl">
-          {t.services.heading}{" "}
-          <span className="bg-[linear-gradient(135deg,var(--accent),var(--accent-2))] bg-clip-text text-transparent">{t.services.accent}</span>
-        </motion.h2>
-        <motion.p variants={fadeUp} className="mt-4 max-w-2xl text-[var(--text-secondary)]">{t.services.sub}</motion.p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {SERVICES.map((service) => {
-            const Icon = ICONS[service.title] ?? Megaphone;
+    <section id="services" className="py-16 md:py-24 bg-[var(--bg-alt)]">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <span className="font-hero text-xs font-semibold uppercase tracking-widest text-[var(--accent)]">{t.services.label}</span>
+        <h2 className="mt-3 font-hero text-3xl md:text-4xl font-bold">
+          {t.services.heading} <span className="gradient-text">{t.services.accent}</span>
+        </h2>
+        <p className="mt-2 text-[var(--text-2)]">{t.services.sub}</p>
+
+        <div className="mt-10 grid sm:grid-cols-2 gap-6">
+          {SERVICES.map((s, i) => {
+            const Icon = ICONS[s.icon as keyof typeof ICONS];
             return (
-              <motion.article key={service.title} variants={fadeUp}
-                whileHover={{ y: -5, borderColor: "rgba(59,130,246,0.35)" }} transition={{ duration: 0.25 }}
-                className="group rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 transition-all"
-                style={{ boxShadow: "var(--shadow-card)" }}>
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-light)] text-[var(--accent)] transition-all group-hover:bg-[var(--accent)] group-hover:text-white">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <h3 className="font-display mt-4 text-xl font-bold text-[var(--text-primary)]">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{service.description}</p>
-                <ul className="mt-4 space-y-2">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-                      <Check className="h-3.5 w-3.5 flex-shrink-0 text-[var(--accent)]" aria-hidden="true" />{f}
-                    </li>
+              <motion.div key={s.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-2xl bg-[var(--card)] border border-[var(--border)] p-6 hover:border-[var(--accent)] transition-colors">
+                <div className="inline-flex rounded-xl bg-[var(--accent)]/10 p-3 mb-4">
+                  <Icon className="h-6 w-6 text-[var(--accent)]" />
+                </div>
+                <h3 className="font-hero text-xl font-bold">{s.title}</h3>
+                <p className="mt-2 text-sm text-[var(--text-2)] leading-relaxed">{s.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {s.features.map(f => (
+                    <span key={f} className="rounded-full bg-[var(--accent)]/8 border border-[var(--accent)]/15 px-3 py-1 text-xs font-medium text-[var(--accent)]">{f}</span>
                   ))}
-                </ul>
-              </motion.article>
+                </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
-    </RevealSection>
+    </section>
   );
 }
